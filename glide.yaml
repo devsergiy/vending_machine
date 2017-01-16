@@ -1,0 +1,4 @@
+package: github.com/spetrunin/vending_machine
+import:
+- package: github.com/labstack/echo
+  version: ~3.0
