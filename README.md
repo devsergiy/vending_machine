@@ -5,5 +5,5 @@
 2. Run the server
     ```go
     cd vending_machine
-    go run main.go
+    go run vending_machine.go
     ```
