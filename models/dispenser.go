@@ -32,6 +32,9 @@ func (d *Dispenser) RequestProduct(productID int) (float32, error) {
 		return currentDeposit, err
 	}
 
+	storage.Amount--
+	d.products[productID] = storage
+
 	return amount, nil
 }
 

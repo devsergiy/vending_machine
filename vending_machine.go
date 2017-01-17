@@ -19,7 +19,7 @@ func main() {
 
 	// products
 	api.GET("/products", handlers.GetProductsList)
-	api.GET("/products/:id/buy", handlers.GetProductsList)
+	api.POST("/products/:id/buy", handlers.BuyProduct)
 
 	e.Logger.Fatal(e.Start(":1323"))
 }
