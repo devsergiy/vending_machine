@@ -4,11 +4,11 @@ import "errors"
 
 // The MoneyStorage describes item for sale
 type MoneyStorage struct {
-	moneyAmount, userDeposit, currentDeposit float32
+	moneyAmount, userDeposit float32
 }
 
-func NewMoneyStorage(cashBackAmount float32) *MoneyStorage {
-	return &MoneyStorage{cashBackAmount, 0, 0, 0}
+func NewMoneyStorage() *MoneyStorage {
+	return &MoneyStorage{0, 0}
 }
 
 // AddMoney allows user to deposit money
@@ -32,4 +32,8 @@ func (m *MoneyStorage) MakeCashBack() (cashback float32) {
 	m.userDeposit = 0
 
 	return cashback
+}
+
+func (m *MoneyStorage) DepositAmount() float32 {
+	return m.userDeposit
 }

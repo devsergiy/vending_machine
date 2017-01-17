@@ -11,8 +11,11 @@ func main() {
 	e.GET("/", handlers.Root)
 
 	api := e.Group("/api")
+
 	api.POST("/deposit", handlers.MakeDeposit)
 	api.GET("/deposit", handlers.GetAvailableDeposit)
+
+	api.GET("/products", handlers.GetProductsList)
 
 	e.Logger.Fatal(e.Start(":1323"))
 }

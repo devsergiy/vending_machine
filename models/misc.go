@@ -1,6 +1,6 @@
 package models
 
-func FillDispenser(dispenser *Dispenser) {
+func FillDispenser(dispenser *Dispenser) *Dispenser {
 	products := []*StorageItem{
 		&StorageItem{&Product{1, "Coca-Cola", 2.25, "drink"}, 5},
 		&StorageItem{&Product{2, "Nuts", 5.55, "chocolate"}, 10},
@@ -10,4 +10,6 @@ func FillDispenser(dispenser *Dispenser) {
 	for _, item := range products {
 		dispenser.AddProduct(item.Product, item.Amount)
 	}
+
+	return dispenser
 }
